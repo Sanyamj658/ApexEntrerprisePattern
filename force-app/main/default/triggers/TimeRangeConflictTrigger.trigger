@@ -8,11 +8,11 @@
 trigger TimeRangeConflictTrigger on Time_Entry__c (before insert, before update) {
 
     
-    if(trigger.isInsert || trigger.isUpdate){
-        if(trigger.isBefore){
-            TimeRangeConflictHandler.TimeRangeConflictCheck(trigger.new);
-        }
-    }
+    // if(trigger.isInsert || trigger.isUpdate){
+    //     if(trigger.isBefore){
+    //         TimeRangeConflictHandler.TimeRangeConflictCheck(trigger.new);
+    //     }
+    // }
 
 
 }
