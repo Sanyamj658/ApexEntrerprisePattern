@@ -1,0 +1,47 @@
+<!--
+  @description       :
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             :
+  @last modified on  : 05-17-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+  <lightning-quick-action-panel header="Create Metting">
+    <lightning-input
+      type="text"
+      label="Metting Title"
+      onchange={handleMettingTitle}
+    ></lightning-input>
+    <lightning-input
+      type="text"
+      label="Enter Description"
+      onchange={handleMettingDescription}
+    ></lightning-input>
+    <lightning-input
+      type="Date"
+      label="Enter Start Date"
+      onchange={handleMettingStartDate}
+    ></lightning-input>
+    <lightning-input
+      type="Time"
+      label="Enter Start Time"
+      onchange={handleMettingStartTime}
+    ></lightning-input>
+    <lightning-input
+      type="Date"
+      label="Enter End Date"
+      onchange={handleMettingEndDate}
+    ></lightning-input>
+    <lightning-input
+      type="Time"
+      label="Enter End Time"
+      onchange={handleMettingEndTime}
+    ></lightning-input>
+    <lightning-button
+      type="submit"
+      name="Create Meeting"
+      label="Create Meeting"
+      onclick={handleCreateMeeting}
+    ></lightning-button>
+  </lightning-quick-action-panel>
+</template>

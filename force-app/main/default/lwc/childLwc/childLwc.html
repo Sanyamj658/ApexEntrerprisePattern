@@ -1,0 +1,30 @@
+<!--
+@description       : 
+@author            : ChangeMeIn@UserSettingsUnder.SFDoc
+@group             : 
+@last modified on  : 03-26-2024
+@last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+<lightning-card title="Child-Component" icon-name="action:upload">
+    <lightning-button class="slds-p-horizontal_medium"
+                        label="Subtract"
+                        icon-name="utility:dash"
+                        onclick={handleSubtract}>
+    </lightning-button>
+
+    <lightning-button class="slds-p-horizontal_medium"
+                      label="Add"
+                      icon-name="utility:add"
+                      onclick={handleAdd}>
+    </lightning-button>
+
+    <lightning-button   class="slds-p-horizontal_medium"
+                        label="5"
+                        value="5"
+                        icon-name="utility:close"
+                        onclick={handleMultiply}>
+    </lightning-button>
+
+</lightning-card>
+</template>

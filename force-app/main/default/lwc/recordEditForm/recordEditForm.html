@@ -1,0 +1,24 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 03-22-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="ENTER PLAYER RECORD EDIT FORM">
+        <lightning-record-edit-form object-api-name={objectApiName}
+                                    onsuccess={handleSucess}
+                                    density="compact">
+                
+            <lightning-input-field field-name="Id" value = {CrircketerId}></lightning-input-field>
+            <lightning-input-field field-name={NameField}></lightning-input-field>
+            <lightning-input-field field-name={CoachField}></lightning-input-field>
+            <lightning-input-field field-name={PictureField}></lightning-input-field>
+
+            <lightning-button variant="brand" label="Submit" type="Submit">Submit</lightning-button>
+
+                                
+        </lightning-record-edit-form>
+    </lightning-card>
+</template>

@@ -1,0 +1,17 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 03-26-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Parent-Component" icon-name="standard:account">
+        <p class="slds-text-align_center">Count : {countValue}</p>
+    </lightning-card>
+  <!-- calling child lwc component -->
+    <c-child-lwc  onsubtract={handleSubtract}
+                  onadd={handleAddition}
+                  onmultiply={handleMultiply}>
+    </c-child-lwc>
+</template>

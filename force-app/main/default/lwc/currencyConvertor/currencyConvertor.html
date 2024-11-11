@@ -1,0 +1,58 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 08-13-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+  <lightning-card title="Currency Convertor" icon-name="custom:custom17">
+    <div class="slds-p-around-medium">
+      <lightning-combobox
+        name="Source Currency"
+        label="Select Source Currency"
+        value={SourceCurrency}
+        placeholder="Select Source Currency"
+        options={options}
+        onchange={SourcehandleChange}
+      ></lightning-combobox>
+    </div>
+
+    <div>
+      <lightning-input
+        name="amount"
+        label="Enter Amount"
+        onchange={handleAmount}
+      ></lightning-input>
+    </div>
+
+    <div class="slds-p-around-medium">
+      <lightning-combobox
+        name="target Currency"
+        label="Select target Currency"
+        value={targetCurrency}
+        placeholder="Select target Currency"
+        options={options}
+        onchange={targethandleChange}
+      ></lightning-combobox>
+    </div>
+    <div>
+      <lightning-button
+        variant="brand"
+        label="Convert"
+        title="Convert"
+        onclick={handleConvert}
+        class="slds-m-left_x-small"
+      ></lightning-button>
+    </div>
+    <div>
+      <lightning-input
+        name="ConvertedAmount"
+        label="Enter Amount"
+        value={ConvertedAmount}
+        onchange={handleConvertedAmount}
+        disabled="true"
+      ></lightning-input>
+    </div>
+  </lightning-card>
+</template>

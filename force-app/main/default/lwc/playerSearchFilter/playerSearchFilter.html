@@ -1,0 +1,35 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 07-04-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+  <lightning-card title="Find a Player">
+    <lightning-button
+      label="New Cricketer"
+      onclick={createNewCricketer}
+      slot="actions"
+    ></lightning-button>
+
+    <div class="slds-align_absolute-center">
+      <lightning-combobox
+        name="progress"
+        value={selectedCricketerNationality}
+        placeholder="Select Country"
+        options={optionArray}
+        onchange={handleOptionChange}
+      ></lightning-combobox>
+    </div>
+    <div class="slds-align_absolute-center">
+      <br />
+      <p>Selected value is: {selectedCricketerNationality}</p>
+    </div>
+  </lightning-card>
+
+  <!-- player search result this is the child component of this -->
+  <div class="slds-m-top_small">
+    <c-player-search-result></c-player-search-result>
+  </div>
+</template>

@@ -1,0 +1,23 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 08-22-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+  <lightning-card title="Upload File to Google Drive">
+    <div class="slds-p-around_medium">
+      <lightning-input
+        type="file"
+        label="Select File"
+        onchange={handleFileChange}
+      ></lightning-input>
+      <lightning-button
+        label="Upload"
+        onclick={handleUploadClick}
+        class="slds-m-top_medium"
+      ></lightning-button>
+    </div>
+  </lightning-card>
+</template>

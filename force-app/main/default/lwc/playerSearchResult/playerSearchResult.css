@@ -1,0 +1,18 @@
+.tile img{
+    width : 100%;
+    height : 200px;
+    padding :  1px;
+    border-radius: 5px;
+    background-position: center;
+}
+
+.title_wrapper{
+    cursor:pointer;
+    padding : 5px;
+    margin : 10px;
+}
+
+.selected {
+    border: 3px solid #1a75ff; /* Example border style */
+    border-radius: 5px;
+  }

@@ -1,0 +1,1 @@
+public class caseTriggerHandler{  	     public static void afterInsert(){      }  }

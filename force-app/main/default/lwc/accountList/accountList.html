@@ -1,0 +1,43 @@
+<!--
+@description       : 
+@author            : ChangeMeIn@UserSettingsUnder.SFDoc
+@group             : 
+@last modified on  : 04-11-2024
+@last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+
+<lightning-card>
+    <h1 class="slds-align_absolute-left slds-text-color_success slds-text-heading_large">Account List With Pagination</h1>
+    
+    <div class="slds-grid slds-grid_align-center">
+        <div class="slds-col">
+            <lightning-input class="slds-input_small" label="Account Name" value={searchedData} onchange={handleInputChange} variant="label-hidden" placeholder="Enter Account"></lightning-input>
+        </div>
+        <div class="slds-col">
+            <button class="slds-button slds-button_brand" onclick={handleSearch}>Search</button>
+        </div>
+    </div>
+    
+    
+        <!-- lightning datatable -->
+        <lightning-datatable
+            key-field="Name"
+            data={data}
+            columns={columns}
+            hide-checkbox-column="true">
+        </lightning-datatable>
+   
+    
+    <div class="slds-align_absolute-center" style="height:5rem">
+        <lightning-combobox style="position:relative; left:-100px; top:-10px;" name="progress" value={value} placeholder="Select Page" options={options} onchange={handleChangeCombox} class="slds-size_xx-small slds-m-right_x-small"></lightning-combobox>
+        <lightning-button disabled={bDisableFirst} icon-name="utility:jump_to_left" label="First" class="slds-p-horizontal_x-small" alternative-text="first page" onclick={firstPage}></lightning-button>
+        <lightning-button disabled={handlePreviousDisable} icon-name="utility:chevronleft" label="Previous" alternative-text="Previous" onclick={handlePrevious}></lightning-button>
+        &nbsp;
+        <span class="slds-badge">Showing {page} &nbsp;of&nbsp; {totalPage} &nbsp;&nbsp;Page(s)</span>
+        &nbsp;
+        <lightning-button disabled={handleNextDisable} icon-name="utility:chevronright" label="Next" alternative-text="Next" onclick={handleNext} class="slds-p-horizontal_x-small" icon-position="right"></lightning-button>
+        <lightning-button disabled={bDisableLast} icon-name="utility:jump_to_right" label="Last" alternative-text="last page" onclick={lastPage} icon-position="right"></lightning-button>
+    </div>
+</lightning-card>
+</template>

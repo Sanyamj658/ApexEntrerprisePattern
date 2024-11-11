@@ -1,0 +1,24 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 04-30-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+  <lightning-card>
+    <lightning-input
+      class="slds-p-horizontal_small"
+      label="counter"
+      value={startCounter}
+      type="number"
+      onchange={handleStartChange}
+    ></lightning-input>
+
+    <lightning-button
+      label="ADD 100"
+      onclick={handleMaxClick}
+    ></lightning-button>
+    <c-child-b counter={startCounter}></c-child-b>
+  </lightning-card>
+</template>

@@ -1,0 +1,22 @@
+.google-drive-logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-image {
+  width: 50px; /* Adjust size as needed */
+  margin-right: 10px;
+}
+
+.upload-input {
+  text-align: center;
+}
+
+.upload-button {
+  text-align: right;
+}
+
+.uploaded-file-info {
+  margin-top: 20px;
+  font-weight: bold;
+}

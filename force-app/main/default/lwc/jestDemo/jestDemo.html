@@ -1,0 +1,22 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 04-11-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-button class="renderButton" onclick={renderNewParagraph}></lightning-button>
+    <template if:true={showNewParagraph}>
+        <p class = 'newParagraph'>Wow I Love Tacos</p>
+    </template>
+    <p>{tacostuff}</p>
+
+    <template for:each={tacoList} for:item="taco">
+        <p class="tacoInfo" key ={taco.id}>{taco.Name}</p>
+    </template>
+
+    <template for:each={accounts} for:item="AccountItem">
+        <p class="AccountInfo" key={AccountItem.Id}>{AccounntItem.Name}</p>
+    </template>
+</template>

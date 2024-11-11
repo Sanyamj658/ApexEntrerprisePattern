@@ -1,0 +1,13 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 08-23-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Upload File to Google Drive">
+        <lightning-input type="file" label="Select File" onchange={handleFileChange}></lightning-input>
+        <lightning-button label="Upload" onclick={handleUpload} disabled={isUploadDisabled}></lightning-button>
+    </lightning-card>
+</template>

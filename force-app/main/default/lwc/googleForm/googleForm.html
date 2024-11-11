@@ -1,0 +1,46 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 06-27-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+  <div class="slds-p-bottom_large slds-p-left_large" style="width: 500px">
+    <div class="slds-p-around_medium lgc-bg">
+      <lightning-input
+        type="text"
+        label="Enter Name"
+        value={name}
+        onchange={handleInputChange}
+      ></lightning-input>
+      <lightning-input
+        type="text"
+        label="Enter Class"
+        value={classValue}
+        onchange={handleInputChange}
+      ></lightning-input>
+      <lightning-input
+        type="text"
+        label="Enter College"
+        value={college}
+        onchange={handleInputChange}
+      ></lightning-input>
+      <lightning-input
+        type="text"
+        label="Enter Location"
+        value={location}
+        onchange={handleInputChange}
+      ></lightning-input>
+    </div>
+    <div>
+      <lightning-button
+        variant="brand"
+        label="Save"
+        title="Primary action"
+        onclick={handleClick}
+        class="slds-m-left_x-small"
+      ></lightning-button>
+    </div>
+  </div>
+</template>

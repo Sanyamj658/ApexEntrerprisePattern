@@ -1,0 +1,26 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 07-16-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+  <lightning-card title="Convert Excel to PDF">
+    <lightning-input
+      type="file"
+      label="Upload Excel File"
+      accept=".xls,.xlsx"
+      onchange={handleFileUpload}
+    ></lightning-input>
+    <lightning-button
+      label="Convert to PDF"
+      onclick={convertToPdf}
+    ></lightning-button>
+    <lightning-button
+      label="Download PDF"
+      onclick={downloadPdf}
+      variant="brand"
+    ></lightning-button>
+  </lightning-card>
+</template>

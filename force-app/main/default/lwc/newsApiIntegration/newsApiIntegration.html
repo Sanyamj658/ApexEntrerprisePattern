@@ -1,0 +1,81 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 04-21-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+  <lightning-card variant="base">
+    <div class="slds-theme_background-color_inverse">
+      <div class="slds-grid slds-align_absolute-center">
+        <lightning-combobox
+          name="progress"
+          value={value}
+          placeholder="Country"
+          options={CountryOptions}
+          onchange={handleCountryChange}
+          class="slds-size_medium slds-m-right_x-small countryCombobox"
+        ></lightning-combobox>
+        <lightning-combobox
+          name="progress"
+          value={value}
+          placeholder="Category"
+          options={CategoryOptions}
+          onchange={handleCategoryChange}
+          class="slds-size_medium slds-m-right_x-small categoryCombobox"
+        ></lightning-combobox>
+        <lightning-button
+          variant="brand"
+          label="Search"
+          title="Primary action"
+          onclick={handleSearch}
+          class="slds-m-left_x-small slds-grid variant = label-hidden searchButton"
+          style="position: relative; left: 10px; top: 10px"
+        ></lightning-button>
+      </div>
+
+      <div class="slds-grid slds-wrap firstClass">
+        <template for:each={result} for:item="item">
+          <div
+            key={item.id}
+            class="slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3"
+          >
+            <div class="slds-card slds-m-around_small">
+              <a href={item.url} target="_blank">
+                <div style="width: 100%; height: 200px; overflow: hidden">
+                  <template if:true={item.urlToImage}>
+                    <img class="slds-card__image" src={item.urlToImage}
+                  /></template>
+                  <template if:false={item.urlToImage}>
+                    <img
+                      class="slds-card__image slds-align_absolute-center"
+                      src={altimage}
+                  /></template>
+                </div>
+              </a>
+              <div class="slds-card__body">
+                <p
+                  class="slds-text-heading_small slds-truncate slds-align_absolute-center slds-text-color_success heading"
+                  title={item.date}
+                >
+                  {item.date}
+                </p>
+                <h2
+                  class="slds-text-heading_small slds-align_absolute-center slds-text-title_bold slds-var-p-horizontal_small title"
+                >
+                  {item.title}
+                </h2>
+              </div>
+              <footer
+                class="slds-card__footer slds-theme_error slds-m-around_medium"
+              >
+                <a href={item.url} target="_blank">Read More</a>
+              </footer>
+            </div>
+          </div>
+        </template>
+      </div>
+    </div>
+  </lightning-card>
+</template>

@@ -1,0 +1,19 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 07-22-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+  <lightning-card title="Using the JS Pdf">
+    <div class="slds-m-around_medium">
+      <input type="file" onchange={handleFileChange} />
+      <lightning-button
+        label="Download PDF"
+        onclick={downloadPdf}
+        class="slds-m-top_medium"
+      ></lightning-button>
+    </div>
+  </lightning-card>
+</template>

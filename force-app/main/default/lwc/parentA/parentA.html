@@ -1,0 +1,14 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 04-29-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+  <lightning-card title="Communicate Child To Parents">
+    <p class="slds-text-align_center">Count : {counter}</p>
+  </lightning-card>
+
+  <c-child-a onadd={handleIncrement} onsub={handleDecrement} onmul={handleMultiply}></c-child-a>
+</template>

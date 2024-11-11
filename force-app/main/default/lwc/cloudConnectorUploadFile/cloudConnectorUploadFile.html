@@ -1,0 +1,23 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 08-02-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+	<lightning-card  title="File/Document/Attachment Upload">		
+		<lightning-input 
+			type="file"
+			onchange={handleFileUpload}>
+		</lightning-input>
+		{fileName}
+		<p slot="footer">
+			<lightning-button 
+				label="Upload"
+				variant="brand"
+				onclick={submitFile}>
+			</lightning-button>
+		</p>
+	</lightning-card>
+</template>

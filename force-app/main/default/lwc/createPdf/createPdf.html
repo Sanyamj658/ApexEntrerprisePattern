@@ -1,0 +1,26 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 07-19-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+  <lightning-card title="Excel to JSON Converter">
+    <lightning-layout>
+      <lightning-layout-item size="12" padding="around-small">
+        <lightning-input
+          type="file"
+          name="excelFile"
+          accept=".xlsx"
+          onchange={handleFileChange}
+        ></lightning-input>
+      </lightning-layout-item>
+    </lightning-layout>
+    <template if:true={jsonString}>
+      <div class="slds-m-around_medium">
+        <pre>{jsonString}</pre>
+      </div>
+    </template>
+  </lightning-card>
+</template>

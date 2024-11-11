@@ -1,0 +1,138 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 08-20-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+  <div class="slds-grid slds-gutters">
+    <!-- this is the sub section for the input -->
+    <div class="slds-col">
+      <lightning-card title="Add New Task">
+        <div class="slds-var-p-around-small">
+          <lightning-input
+            label="Enter Task"
+            placeholder="Enter The Task Detail"
+            required
+            name="taskName"
+            onchange={changeHandler}
+            class="taskName"
+            value={taskName}
+            message-when-value-missing="Kindly Enter the Task Name"
+          ></lightning-input>
+          <lightning-input
+            type="date"
+            label="Enter End DATE"
+            placeholder="Enter The Date"
+            field-level-help="Default End date is Today Date"
+            name="taskDate"
+            value={taskDate}
+            onchange={changeHandler}
+          ></lightning-input>
+        </div>
+        <div class="slds-var-p-around-small">
+          <lightning-button
+            variant="brand"
+            label="Reset"
+            onclick={resetHandler}
+            class="slds-m-right_small"
+          ></lightning-button>
+          <lightning-button
+            variant="brand"
+            label="Add Task"
+            onclick={addTaskHandler}
+          ></lightning-button>
+        </div>
+      </lightning-card>
+    </div>
+
+    <!-- this is for add the task on the incomplete Task -->
+    <div class="slds-col">
+      <lightning-card title="To Do List">
+        <div class="slds-var-p-around_small">
+          <template if:true={incompletetask.length}>
+            <template for:each={incompletetask} for:item="currtask">
+              <div
+                key={currtask.id}
+                class="slds-box slds-theme_shade slds-m-bottom_small"
+              >
+                <div class="slds-grid slds-wrap">
+                  <div class="slds-col slds-size_8-of-12">
+                    <p>{currtask.taskName}</p>
+                    <p>
+                      <lightning-formatted-date-time
+                        value={currtask.taskDate}
+                        year="2-digit"
+                        month="short"
+                        day="2-digit"
+                        weekday="long"
+                      >
+                      </lightning-formatted-date-time>
+                    </p>
+                  </div>
+                  <div class="slds-col slds-size_4-of-12">
+                    <lightning-button-icon
+                      icon-name="utility:delete"
+                      alternative-text="Delete"
+                      class="slds-m-left_xx-small"
+                      title="Delete"
+                      data-id={currtask.id}
+                      onclick={removalHandler}
+                    ></lightning-button-icon>
+                    <lightning-button-icon
+                      icon-name="utility:check"
+                      alternative-text="Check"
+                      class="slds-m-left_xx-small"
+                      title="Check"
+                      data-id={currtask.id}
+                      onclick={completeTaskHandler}
+                    ></lightning-button-icon>
+                  </div>
+                </div>
+              </div>
+            </template>
+          </template>
+          <template if:false={incompletetask.length}>
+            <p>No tasks available</p>
+          </template>
+        </div>
+      </lightning-card>
+    </div>
+
+    <!-- A task which is completed-->
+    <div class="slds-col">
+      <lightning-card title="Completed Items">
+        <div class="slds-var-p-around_small">
+          <template if:true={completetask.length}>
+            <template for:each={completetask} for:item="currtask">
+              <div
+                key={currtask.id}
+                class="slds-box slds-theme_success slds-m-bottom_small"
+              >
+                <div class="slds-grid slds-wrap">
+                  <div class="slds-col slds-size_8-of-12">
+                    <p>{currtask.taskName}</p>
+                    <p>
+                      <lightning-formatted-date-time
+                        value={currtask.taskDate}
+                        year="2-digit"
+                        month="short"
+                        day="2-digit"
+                        weekday="long"
+                      >
+                      </lightning-formatted-date-time>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </template>
+          </template>
+          <template if:false={completetask.length}>
+            <p>No completed tasks</p>
+          </template>
+        </div>
+      </lightning-card>
+    </div>
+  </div>
+</template>

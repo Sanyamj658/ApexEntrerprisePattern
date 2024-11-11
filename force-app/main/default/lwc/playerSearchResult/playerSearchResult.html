@@ -1,0 +1,37 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 07-04-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+  <lightning-card title="Player Search Result">
+    <lightning-layout multiple-rows="true">
+      <template if:true={playerData}>
+        <template for:each={playerData} for:item="player">
+          <lightning-layout-item
+            size="3"
+            key={player.Id}
+            padding="around-small"
+            class="slds-align_absolute-right"
+          >
+            <div
+              class="title_wrapper"
+              onclick={handlePlayerClick}
+              data-id={player.Id}
+            >
+              <div class="tile">
+                <img src={player.Image__c} />
+              </div>
+              <div class="player data">
+                <h1>Name: {player.Name}</h1>
+                <p>Runs: {player.Runs__c}</p>
+              </div>
+            </div>
+          </lightning-layout-item>
+        </template>
+      </template>
+    </lightning-layout>
+  </lightning-card>
+</template>

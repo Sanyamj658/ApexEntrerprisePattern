@@ -1,0 +1,61 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 06-18-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+  <div class="slds-theme_default">
+    <div class="slds-p-around_medium">
+      <lightning-progress-indicator type="path" current-step={selectedStep}>
+        <lightning-progress-step
+          label="Step1"
+          value="Step1"
+          onclick={selectStep1}
+        >
+        </lightning-progress-step>
+
+        <lightning-progress-step
+          label="Step2"
+          value="Step2"
+          onclick={selectStep2}
+        >
+        </lightning-progress-step>
+
+        <lightning-progress-step
+          label="Step3"
+          value="Step3"
+          onclick={selectStep3}
+        >
+        </lightning-progress-step>
+      </lightning-progress-indicator>
+
+      <div class="slds-m-vertical_medium">
+        <lightning-button label="Previous" onclick={previousStep}
+          >&nbsp; &nbsp;
+        </lightning-button>
+
+        <!-- Conditional rendering for Next button -->
+        <template if:false={isLastStep}>
+          <div class="slds-float_right">
+            <lightning-button
+              label="Next"
+              onclick={nextStep}
+            ></lightning-button>
+          </div>
+        </template>
+
+        <!-- Conditional rendering for Confirm button -->
+        <template if:true={isLastStep}>
+          <div class="slds-float_right">
+            <lightning-button
+              label="Confirm"
+              onclick={handleConfirm}
+            ></lightning-button>
+          </div>
+        </template>
+      </div>
+    </div>
+  </div>
+</template>

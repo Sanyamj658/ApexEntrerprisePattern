@@ -1,0 +1,72 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 04-18-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+  <lightning-card>
+    <lightning-input
+      placeholder="Enter the Name"
+      label="Transcation Name"
+      value={searchedData}
+      onchange={handleInputChange}
+    ></lightning-input>
+
+    <lightning-input
+      type="date"
+      label="Purhase Date"
+      onchange={handleDateChange}
+    ></lightning-input>
+
+    <lightning-combobox
+      name="progress"
+      label="No.of Month"
+      value={value}
+      options={monthoptions}
+      onchange={handleMonthChange}
+      >Payment Date</lightning-combobox
+    >
+
+    <lightning-input type="Number" label="Amount" onchange={handleAmountChange}
+      >Amount</lightning-input
+    >
+
+    <lightning-combobox
+      name="payment date"
+      label="Payment Date"
+      value={value}
+      placeholder="Select Progress"
+      options={paymentDateOption}
+      onchange={handlePaymentDateChange}
+      >No of Month</lightning-combobox
+    >
+    <lightning-button
+      variant="brand"
+      label="Calculate +"
+      title="Primary action"
+      onclick={handleClick}
+      class="slds-m-left_x-small"
+    ></lightning-button>
+  </lightning-card>
+
+  <template if:true={showDataTable}>
+    <lightning-datatable
+      class="dataTables"
+      key-field="Name"
+      data={installments}
+      columns={columns}
+      hide-checkbox-column="true"
+    >
+    </lightning-datatable>
+
+    <lightning-button
+      variant="brand"
+      label="Save"
+      title="Primary action"
+      onclick={handleSave}
+      class="slds-m-left_x-small"
+    ></lightning-button>
+  </template>
+</template>

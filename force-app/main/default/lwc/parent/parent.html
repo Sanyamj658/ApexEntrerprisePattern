@@ -1,0 +1,28 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 10-08-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+  <lightning-card title="LWC Decorator Revised">
+    <p>Hi, Welcome to the Concretio {parVar}</p>
+    <lightning-button
+      variant="var"
+      label="var"
+      title="Primary action"
+      onclick={handleMessage}
+      class="slds-m-left_x-small"
+    ></lightning-button>
+    <lightning-button
+      variant="function"
+      label="function"
+      title="Primary action"
+      onclick={handleMethod}
+      class="slds-m-left_x-small"
+    ></lightning-button>
+
+    <c-child></c-child>
+  </lightning-card>
+</template>

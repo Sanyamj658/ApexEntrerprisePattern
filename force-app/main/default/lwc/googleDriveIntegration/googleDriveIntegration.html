@@ -1,0 +1,44 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 08-21-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+  <lightning-card title="Google Drive Integration">
+    <div class="slds-grid slds-gutters">
+      <div class="slds-col">
+        <div class="google-drive-logo">
+          <img
+            src={googleDriveLogoUrl}
+            alt="Google Drive Logo"
+            class="logo-image"
+          />
+        </div>
+      </div>
+      <div class="slds-col">
+        <div class="upload-input">
+          <lightning-input
+            type="file"
+            label="Choose File"
+            onchange={handleFileChange}
+          ></lightning-input>
+        </div>
+      </div>
+      <div class="slds-col">
+        <div class="upload-button">
+          <lightning-button
+            label="Upload"
+            onclick={handleUpload}
+          ></lightning-button>
+        </div>
+      </div>
+    </div>
+    <template if:true={uploadStatus}>
+      <div class="uploaded-file-info">
+        <p>{uploadStatus}</p>
+      </div>
+    </template>
+  </lightning-card>
+</template>

@@ -1,0 +1,19 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 03-21-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+   
+    <lightning-card title="BUTTON CARD">
+        <lightning-button variant="brand" label={onClickButton} title="Primary action" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+    </lightning-card>
+
+    <template if:true = {carVisible}>
+        <lightning-card title="CHECKING IF-ELSE">{myTitle}</lightning-card>
+    </template>
+
+    
+</template>
