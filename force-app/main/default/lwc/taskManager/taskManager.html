@@ -2,12 +2,15 @@
   @description       : 
   @author            : ChangeMeIn@UserSettingsUnder.SFDoc
   @group             : 
-  @last modified on  : 11-06-2024
+  @last modified on  : 11-11-2024
   @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 -->
 <template>
-  <lightning-card title="Project1 user Task Manager">
-    <lightning-button label="Add Time Log" onclick={openModal}></lightning-button>
+  <lightning-card title="Project user Task Manager">
+    <lightning-button
+      label="Add Time Log"
+      onclick={openModal}
+    ></lightning-button>
 
     <template if:true={isModalOpen}>
       <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
@@ -64,21 +67,12 @@
                     onchange={handleDateChange}
                   ></lightning-input>
                 </div>
-                <div class="slds-col">
-                  <lightning-combobox
-                    name="users"
-                    label="Select User"
-                    value={selectedUser}
-                    options={userOptions}
-                    onchange={handleUserChange}
-                  ></lightning-combobox>
-                </div>
               </div>
 
               <div class="slds-grid slds-grid_align-spread slds-m-top_small">
                 <div class="slds-col">
                   <lightning-input
-                     
+                    type="time"
                     label="Start Time"
                     value={startTime}
                     onchange={handleStartTimeChange}
@@ -119,24 +113,50 @@
       </section>
       <div class="slds-backdrop slds-backdrop_open"></div>
     </template>
-
   </lightning-card>
+<!-- 
+  <lightning-datatable
+  data={favTasks}
+  columns={col}
+  key-field="Id">
+  draft-values={draftValues}
+</lightning-datatable> -->
 
-  <!--Fetching the data -->
+<lightning-datatable
+key-field="id"
+data={favTasks}
+columns={col}
+onsave={handleSave}
+
+hide-checkbox-column="true"
+></lightning-datatable>
 
   <lightning-card title="Fetch Data" icon-name="custom:custom14">
     <div class="slds-m-around_medium">
-        <lightning-input type="date" label="Start Date" value={startDate} onchange={handleStartDateChange}></lightning-input>
-        <lightning-input type="date" label="End Date" value={endDate} onchange={handleEndDateChange}></lightning-input>
-        <lightning-button label="Fetch" onclick={fetchData}></lightning-button>
+      <lightning-input
+        type="date"
+        label="Start Date"
+        value={startDate}
+        onchange={handleStartDateChange}
+      ></lightning-input>
+      <lightning-input
+        type="date"
+        label="End Date"
+        value={endDate}
+        onchange={handleEndDateChange}
+      ></lightning-input>
+      <lightning-button label="Fetch" onclick={fetchData}></lightning-button>
     </div>
     <lightning-datatable
-    data={data}
-    columns={columns}
-    key-field="Id"
-    class="slds-m-top_medium"
-  ></lightning-datatable>
-  <lightning-button label="Download PDF" onclick={downloadPdf}></lightning-button>
+      data={data}
+      columns={columns}
+      key-field="Id"
+      class="slds-m-top_medium"
+    ></lightning-datatable>
+    <lightning-button
+      label="Download PDF"
+      onclick={downloadPdf}
+    ></lightning-button>
 
   </lightning-card>
 </template>
